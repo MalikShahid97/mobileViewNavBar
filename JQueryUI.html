@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI </title>
+  <link rel="stylesheet" href="jqueryUI/jquery-ui.css">
+  <link rel="stylesheet" href="jqueryUI/jquery-ui.structure.css">
+  <link rel="stylesheet" href="jqueryUI/jquery-ui.theme.css"> 
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"> 
+  <style>
+	body{
+		margin:0px;
+	}
+	*{
+		outline:none;
+	}
+	.ui-accordion .ui-accordion-content {
+		padding: 0.1em 0.1em;
+	}
+	.ui-widget-content a {
+		color: #e8e3e3;
+	}
+	ul{
+		padding:0xp;
+		margin:0px;
+	}
+	a{
+		text-decoration:none;
+		:white;
+	}
+	li{
+		text-align:center;
+		text-style:none;
+		padding:10px;
+		margin-bottom:3px;
+		background-color:green;
+	}
+	.btnStyle{
+		margin-left:5px; 
+		font-size:1.7em; 
+		margin-top:0px; 
+		border:none; 
+		border-radius:5px; 
+		color:white; 
+		cursor:pointer; 
+		display:none;
+	}
+	@media screen and (max-width:500px){
+		#btn1{
+			display:block;
+		}
+	}
+  </style>
+  
+
+</head>
+<body>
+<nav style="height:35px; background-color: blue; padding-top:10px; padding-bottom:0px;">
+
+	  <span id="btn1" class="btnStyle" >	<i class="fa fa-bars" aria-hidden="true"></i> </span>
+	  <span id="btn2" class="btnStyle" >	<i class="fa fa-times" aria-hidden="true"></i> </span>
+	
+</nav>
+<!-- Acordion-->
+	<div id="accor" style="width:30%; display:none; padding:3px; z-index:1000; height:300px; position: absolute; ">
+
+			<h3>Link 1</h3>
+				<ul>
+					<a href="#"><li>sub link 1</li></a>
+					<a href="#"><li>sub link 2</li></a>
+					<a href="#"><li>sub link 3</li></a>
+				</ul>	
+			<h3>Link 2</h3>
+				<ul>
+					<a href="#"><li>sub link 1</li></a>
+					<a href="#"><li>sub link 2</li></a>
+					<a href="#"><li>sub link 3</li></a>
+				</ul>
+			<h3>Link 3</h3>
+				<ul>
+					<a href="#"><li>sub link 1</li></a>
+					<a href="#"><li>sub link 2</li></a>
+					<a href="#"><li>sub link 3</li></a>
+				</ul>
+
+	</div>
+	
+	<div style="background-color:yellow; height:580px; width:100%;">
+		<div></div>
+	</div>
+</body>
+
+
+<script src="jquery.js" type="text/javascript"></script>
+  <script src="jqueryUI/jquery-ui.js" type="text/javascript"></script>
+  
+  
+  
+<script type="text/javascript">
+	
+	
+   $(document).ready(function(){
+		$('#accor').accordion({
+			collapsible:true,
+			event:"click",
+			animate:300,
+			active:0,
+			heightStyle:true,
+			
+		});		
+		$('#btn1').click(function(){
+			$('#accor').toggle();
+			$('#btn1').hide();
+			$('#btn2').show();
+		});
+		$('#btn2').click(function(){
+			$('#accor').toggle();
+			$('#btn2').hide();
+			$('#btn1').show();
+		});
+   }); 
+    
+
+    
+</script>  
+</html>
